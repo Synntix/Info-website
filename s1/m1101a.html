@@ -5,7 +5,7 @@
     <title>Semestre 1 - M1101A</title>
     <link rel="stylesheet" href="css/m1101a.css">
     <link rel="stylesheet" href="../css/master.css">
-    <link rel="shortcut icon" href="static/programmingicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/programmingicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -25,6 +25,10 @@
         <dd>Crée un répertoire</dd>
         <dt>rm [fichier(s)]</dt>
         <dd>Supprime un ou plusieurs fichiers (-r pour un répertoire)</dd>
+        <dt>ln -s</dt>
+        <dd>Crée un lien symbolique</dd>
+        <dt>chmod</dt>
+        <dd>Change les permissions des fichiers/répertoires (<code>chmod -R go-rwx</code> pour revenir à la situation de base)</dd>
       </dl>
     </section>
 
@@ -58,23 +62,23 @@
         <dt>></dt>
         <dd>Permet de rediriger la sortie d'une commande dans un fichier (le crée si le fichier n'existe pas et l'écrase s'il existe) : COMMANDE > NOM_FICHER</dd>
         <dt>>></dt>
-        <dd>Comme <command>></command> sauf que la sortie est ajoutée à la fin du fichier cible</dd>
+        <dd>Comme <code>></code> sauf que la sortie est ajoutée à la fin du fichier cible</dd>
         <dt>grep [pattern]</dt>
         <dd>Permet de sélectionner des lignes contenant le pattern. (-v pour ne pas afficher les lignes contenant le pattern)</dd>
         <dt>head</dt>
         <dd>Donne les dix premières lignes d'une sortie (-n NUM pour set un nombre de lignes)</dd>
         <dt>tail</dt>
-        <dd>Comme <command>head</command> mais pour la fin d'une sortie</dd>
+        <dd>Comme <code>head</code> mais pour la fin d'une sortie</dd>
         <dt>cut</dt>
-        <dd><command>cut -c5-10</command> du 5e caractère au 10e</dd>
-        <dd><command>cut -c5,10</command> le 5e char et le 10e</dd>
-        <dd><command>cut -c5-</command> du 5e à la fin.</dd>
+        <dd><code>cut -c5-10</code> du 5e caractère au 10e</dd>
+        <dd><code>cut -c5,10</code> le 5e char et le 10e</dd>
+        <dd><code>cut -c5-</code> du 5e à la fin.</dd>
         <dt>cut -d 'CHARACTER' -fFIELD</dt>
         <dd>Sélectionne un champ parmis des champs séparés par un caractère</dd>
         <dt>wc</dt>
         <dd>Affiche le nombre de lignes, mots, caractères</dd>
         <dt>uniq</dt>
-        <dd>Supprime les lignes en double (-c compte le nombre de lignes qui apparaissent plusieurs fois -d n'affiche que les lignes répétitives -u n'affiche que les ligne uniques)</dd>
+        <dd>Supprime les lignes en double (-c compte le nombre de lignes qui apparaissent plusieurs fois ; -d n'affiche que les lignes répétitives ; -u n'affiche que les ligne uniques)</dd>
         <dt>man [COMMANDE]</dt>
         <dd>Permet d'obtenir une documentation sur une commande</dd>
         <dt>find [répertoire]</dt>
@@ -93,7 +97,41 @@
         <dd>Indiquer l'espace occupé par les systèmes de fichiers (-h = adapte le format de taille)</dd>
         <dt>quota</dt>
         <dd>Affiche l'utilisation du disque et ses limites (-v = affiche plus d'informations)</dd>
+        <dt>du -hs</dt>
+        <dd>Donne la place disque occupée par le répertoire courant (-h = adapte le format de taille ; -s regroupe tous les sous-éléments)</dd>
+        <dt>k4dirstat</dt>
+        <dt>baobab</dt>
+        <dd>Logiciels graphiques concernant l'espace disque utilisé sur un répertoire</dd>
       </dl>
+    </section>
+
+    <section>
+      <h3>Archives</h3>
+      <p>Vous pouvez mettre ça dans votre .bashrc et ensuite faire <code>e example.tar.gz</code> mais sachez quand même utiliser <code>tar</code>
+        <p>Source : <a href="https://www.reddit.com/r/unixporn/comments/cy7fd2/tiling_users_do_you_also_have_a_fallback_desktop/eyq9bgt/">Reddit</a></p>
+      <pre>
+        e() {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xjvf $1 ;;
+			*.tar.gz)    tar xzvf $1 ;;
+			*.tar.xz)    tar xJvf $1 ;;
+			*.bz2)       bunzip2 $1 ;;
+			*.rar)       unrar xv $1 ;;
+			*.gz)        gunzip $1 ;;
+			*.tar)       tar xvf $1 ;;
+			*.tbz2)      tar xjvf $1 ;;
+			*.tgz)       tar xzvf $1 ;;
+			*.zip)       unzip $1 ;;
+			*.7z)        7z $1 ;;
+			*.xz)        xz -vd $1 ;;
+			*)           echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}<!--
+   --></pre>
     </section>
 
   </body>
