@@ -1,0 +1,22 @@
+dt {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 1.1em;
+  background-color: #181820;
+  border-radius: 3px;
+  padding: 0.2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+section {
+  margin-left: 50px;
+}
+
+command {
+  font-family: monospace;
+  font-size: 1.1em;
+  background-color: #181820;
+  border-radius: 3px;
+  padding: 0.2em;
+}
