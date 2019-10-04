@@ -6,9 +6,23 @@ body {
   font-family: Raleway, sans-serif;
 }
 
+p::selection, a::selection, dt::selection, dd::selection, h1::selection, h2::selection, h3::selection {
+  color: white;
+  background: #3f51b5;
+}
+
 h1 {
   font-size: 2.5em;
   margin-bottom: 2em;
+}
+
+h2 {
+  font-variant: small-caps;
+  text-decoration: underline;
+}
+
+h3 {
+  margin-top: 50px;
 }
 
 nav ul li a {
@@ -19,5 +33,5 @@ nav ul li a {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: #495CFF;
+  text-decoration-color: #3f51b5;
 }
