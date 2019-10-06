@@ -13,16 +13,12 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
 }
 
 h2 {
   font-variant: small-caps;
   text-decoration: underline;
-}
-
-h3 {
-  margin-top: 50px;
 }
 
 nav ul li a {
@@ -50,7 +46,7 @@ dt {
   display: inline-block;
   font-family: monospace;
   font-size: 1.1em;
-  background-color: #181820;
+  background-color: #191919;
   border-radius: 3px;
   padding: 0.2em;
   margin-top: 0.5em;
@@ -64,7 +60,7 @@ section {
 code {
   font-family: monospace;
   font-size: 1.1em;
-  background-color: #181820;
+  background-color: #191919;
   border-radius: 3px;
   padding: 0.2em;
 }
@@ -72,14 +68,15 @@ code {
 dt {
   margin-right: 10px;
   margin-top: 10px;
+  font-size: 1.1em;
 }
 
 pre {
   display: inline-block;
   font-family: monospace;
   font-size: 1.1em;
-  background-color: #1D1D1D;
-  border-radius: 10px;
+  background-color: #191919;
+  border-radius: 5px;
   padding: 0.2em;
 }
 
@@ -91,4 +88,12 @@ em {
 
 strong {
   text-decoration: underline;
+}
+
+section + section h2 {
+  margin-top: 70px;
+}
+
+section + section h3 {
+  margin-top: 30px;
 }

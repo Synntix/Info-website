@@ -11,37 +11,69 @@
 
     <h1><a href="index-s1.html">Semestre 1</a> - M1105 : Web</h1>
 
-    <h2>Sélecteurs CSS</h2>
+    <section>
+      <h2>Sélecteurs CSS</h2>
+      <dl>
+        <dt>balise1<em>,</em> balise2</dt>
+        <dd>Tous les éléments balise1 <strong>et</strong> balise2 de la page</dd>
+        <dt>balise1 balise2</dt>
+        <dd>Les éléments balise2 <strong>contenus dans</strong> balise1</dd>
+        <dt>balise1 <em>></em> balise2</dt>
+        <dd>Les éléments balise2 <strong>qui ont pour parent</strong> un élément balise1</dd>
+        <dt>balise1 <em>+</em> balise2</dt>
+        <dd>Les éléments balise2 <strong>qui suivent immédiatement</strong> des éléments balise1</dd>
+        <dt>balise1 <em>~</em> balise2</dt>
+        <dd>Les éléments balise2 <strong>qui précèdent</strong> des éléments balise1</dd>
+        <dt><em>#</em>identifiant</dt>
+        <dd>L’élément dont <strong>l’id</strong> est "identifiant"</dd>
+        <dt><em>.</em>nomclass</dt>
+        <dd>Tous les éléments qui possèdent la <strong>classe</strong> "nomclass"</dd>
+        <dt>balise<em>.</em>nomclass</dt>
+        <dd>Tous les <strong>éléments "balise" qui possèdent la classe</strong> "nomclass”</dd>
+        <dt>balise<em>:first-child</em></dt>
+        <dd>Le <strong>premier enfant</strong> de la balise "balise"</dd>
+        <dt>balise<em>:last-child</em></dt>
+        <dd>Le <strong>dernier enfant</strong> de la balise "balise"</dd>
+        <dt>balise<em>:nth-child(n)</em></dt>
+        <dd>Le <strong>n<sup>ième</sup> enfant</strong> de la balise "balise"</dd>
+        <dt>balise<em>:nth-of-type(n)</em></dt>
+        <dd><dd><strong>La n<sup>ième</sup> balise</strong> "balise" <strong>de son parent</strong></dd></dd>
+        <dt>balise<em>:nth-last-of-type(n)</em></dt>
+        <dd><dd><dd><strong>Les n<sup>ièmes</sup> dernières balises</strong> "balise" <strong>de leur parents</strong></dd></dd></dd>
+      </dl>
+    </section>
 
-    <dl>
-      <dt>balise1<em>,</em> balise2</dt>
-      <dd>Tous les éléments balise1 <strong>et</strong> balise2 de la page</dd>
-      <dt>balise1 balise2</dt>
-      <dd>Les éléments balise2 <strong>contenus dans</strong> balise1</dd>
-      <dt>balise1 <em>></em> balise2</dt>
-      <dd>Les éléments balise2 <strong>qui ont pour parent</strong> un élément balise1</dd>
-      <dt>balise1 <em>+</em> balise2</dt>
-      <dd>Les éléments balise2 <strong>qui suivent immédiatement</strong> des éléments balise1</dd>
-      <dt>balise1 <em>~</em> balise2</dt>
-      <dd>Les éléments balise2 <strong>qui précèdent</strong> des éléments balise1</dd>
-      <dt><em>#</em>identifiant</dt>
-      <dd>L’élément dont <strong>l’id</strong> est "identifiant"</dd>
-      <dt><em>.</em>nomclass</dt>
-      <dd>Tous les éléments qui possèdent la <strong>classe</strong> "nomclass"</dd>
-      <dt>balise<em>.</em>nomclass</dt>
-      <dd>Tous les <strong>éléments "balise" qui possèdent la classe</strong> "nomclass”</dd>
-      <dt>balise<em>:first-child</em></dt>
-      <dd>Le <strong>premier enfant</strong> de la balise "balise"</dd>
-      <dt>balise<em>:last-child</em></dt>
-      <dd>Le <strong>dernier enfant</strong> de la balise "balise"</dd>
-      <dt>balise<em>:nth-child(n)</em></dt>
-      <dd>Le <strong>n<sup>ième</sup> enfant</strong> de la balise "balise"</dd>
-      <dt>balise<em>:nth-of-type(n)</em></dt>
-      <dd><dd><strong>La n<sup>ième</sup> balise</strong> "balise" <strong>de son parent</strong></dd></dd>
-      <dt>balise<em>:nth-last-of-type(n)</em></dt>
-      <dd><dd><dd><strong>Les n<sup>ièmes</sup> dernières balises</strong> "balise" <strong>de leur parents</strong></dd></dd></dd>
+    <section>
+      <h2>Positionnement : Flex</h2>
+      <section>
+        <h3>Propriétés du conteneur</h3>
 
-    </dl>
+        <dl>
+          <dt>display: <em>flex</em>;</dt>
+          <dd>Tous les <strong>enfants du conteneur</strong> deviennent des <strong>flex items</strong></dd>
+          <dt><em>flex-direction</em>: (row|row-reverse|column|column-reverse)</dt>
+          <dd>Définit la direction de <strong>l’axe principal</strong> du conteneur flex</dd>
+          <dt><em>justify-content</em>: (center|flex-start|flex-end|space-around|space-between)</dt>
+          <dd>Contrôle l'alignement de tous les éléments-flex sur <strong>l'axe principal</strong></dd>
+          <dt><em>align-items</em>: (center|flex-start|flex-end|stretch)</dt>
+          <dd>Contrôle l'alignement de tous les éléments-flex sur <strong>l'axe secondaire</strong></dd>
+          <dt><em>flex-wrap</em>: (nowrap|wrap|wrap-reverse)</dt>
+          <dd>Décide si les flex-items peuvent aller sur une <strong>deuxième ligne</strong> si la fenêtre est trop petite</dd>
+        </dl>
+
+      </section>
+
+      <section>
+        <h3>Propriétés des flex-items</h3>
+
+        <dl>
+          <dt><em>align-self</em>: (stretch|flex-start|flex-end|center)</dt>
+          <dd>Contrôle l'alignement d'un élément-flex <strong>particulier</strong> le long de <strong>l'axe secondaire</strong></dd>
+          <dt><em>flex</em>: 1;</dt>
+          <dd>L'élément prend l'espace restant dans son conteneur</dd>
+        </dl>
+      </section>
+    </section>
 
   </body>
 </html>
