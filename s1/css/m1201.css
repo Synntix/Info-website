@@ -1,0 +1,8 @@
+nav ul {
+  background-color: #222224;
+}
+
+nav.shift ul li a {
+  background-color: #2c2c2e;
+  padding: 24px 50px;
+}
