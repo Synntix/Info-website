@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DUT-Info</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/m1104.css">
+    <link rel="shortcut icon" href="../static/programmingicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <h1><a href="index-s1.html">Semestre 1</a> - M1104 : Base de données</h1>
+
+    <section>
+      <h2>Les opérateurs</h2>
+
+      <section>
+        <h3>Projection</h3>
+        <dl>
+          <dt>Principe résumé : </dt>
+          <dd>Permet de ne garder que les attributs (colonnes) choisis</dd>
+          <dt>Algébrique :</dt>
+          <dd>R &larr; RA<em>[</em>X<em>]</em></dd>
+          <dt>SQL : </dt>
+          <dd>
+            <pre>
+SELECT X
+FROM RA;<!--
+         --></pre>
+          </dd>
+          <dt>Illustration : </dt>
+          <dd><!--Insérer Illustration--></dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3>Séléction</h3>
+        <dl>
+          <dt>Principe résumé : </dt>
+          <dd>Permet de ne garder que les n-uplets (lignes) remplissant une ou plusieurs condition(s)</dd>
+          <dt>Algébrique :</dt>
+          <dd>R &larr; RA <em>/</em> Condition</dd>
+          <dt>SQL : </dt>
+          <dd>
+            <pre>
+SELECT …
+FROM RA
+WHERE Condition;<!--
+         --></pre>
+          </dd>
+          <dt>Illustration : </dt>
+          <dd><!--Insérer Illustration--></dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3>Jointure</h3>
+        <dl>
+          <dt>Principe résumé : </dt>
+          <dd>Permet de concaténer un attribut (colonne) de deux relation (table)</dd>
+          <dt>Algébrique :</dt>
+          <dd>R &larr; RA <em>*</em> (VA = VB) RB</dd>
+          <dt>SQL : </dt>
+          <dd>
+            <pre>
+SELECT …
+FROM RA, RB
+WHERE RA.VA = RB.VB;
+
+Ou
+
+SELECT …
+FROM RA
+WHERE VA IN(SELECT VB
+            FROM RB);<!--
+         --></pre>
+          </dd>
+          <dt>Illustration : </dt>
+          <dd><!--Insérer Illustration--></dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3>Division</h3>
+        <dl>
+          <dt>Principe résumé : </dt>
+          <dd>Permet de garder les n-uplets de RA qui sont associés à <em>tous les</em> n-uplets de RB</dd>
+          <dt>Algébrique :</dt>
+          <dd>R &larr; RA <em>&#247;</em> RB</dd>
+          <dt>SQL : </dt>
+          <dd>
+            <pre>…</pre>
+          </dd>
+          <dt>Illustration : </dt>
+          <dd><!--Insérer Illustration--></dd>
+        </dl>
+      </section>
+    </section>
+
+
+
+  </body>
+</html>
