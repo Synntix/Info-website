@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DUT-Info</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/m1104.css">
+    <link rel="shortcut icon" href="../static/programmingicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index-s1.html">Semestre 1</a> - M1102 : Algo/Prog</h1>
+
+        <h2>Annexe</h2>
+        <nav class="shift" >
+            <ul>
+                <li><a href="#Champion_du_monde">Champion du monde</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="Champion_du_monde">
+        <h3>Champion du Monde !!</h3>
+        <section style="padding-left:0.5px;" >
+            <p>La base de données suivante permet de gérer une partie des données de la coupe du monde de Foot 2018.</p>
+            <p>
+                <b>Equipe (<ins>Nom</ins>, Entraineur, Poule)</b><br>
+                Une équipe d’un nom donné (ex : France) possède un entraineur (ex : Didier Deschamp est l’entraineur de l’équipe de France). Au début de la compétition, une équipe à une poule (ex : Poule A) grâce à une tirage au sort.
+            </p>
+            <p>
+                <b>Joueur (<ins>Nom, Prenom</ins>, Age, Position, nomEquipe)</b><br>
+                Chaque joueur de foot possède un nom, un prénom, un âge et est catactérisé par sa position (ex : Défenseur, Milieu, Ailier droit, Buteur, …). Un joueur appartient à une équipe (ex : France)
+            </p>
+            <p>
+                <b>Match (<ins>Type, Equipe1, Equipe2</ins>, dateMatch, resEquipe1, resEquipe2)</b><br>
+                Cette table stock les informations sur les différents matchs. Un match est d’un certain type 
+                (Match de poule, 16<sup>ème</sup> de finale, 8<sup>ème</sup> de finale, Quart de final, Demi-final, Finale) 
+                et oppose deux équipes (ex : France - Belgique ou Croatie - Angleterre). 
+                Il a lieu à une certaine date, et aura un résultat composé du nombre de buts de chaque équipe 
+                (ex : la demie final France Belgique a eu lieu le 19 juillet 2018 et le résultat a été de 1 pour la France à 0 pour la Belgique).
+            </p>
+            <p>
+                <b>Arbitre (<ins>nomArbitre, typeMatch, Equipe1, Equipe2</ins>, role)</b><br>
+                Un arbitre d’un nom donné arbitre des matchs. Dans un match, un arbitre a un certain rôle (arbitre central, abitre vidéo, 4<sup>ème</sup> arbitre,…). 
+                Par exemple, lors de la Final France Croatie, l’arbitre Pitana était arbitre vidéo.
+            </p>
+            <ol>
+                <li><b>Répondez au question suivantes (OUI ou NON avec JUSTIFICATION) :</b>
+                    <ul>
+                        <li>Est-ce qu’un arbitre peut savoir plusieurs rôles ?</li>
+                        <li>Est-ce qu’un arbitre peut arbitrer plusieurs types de matchs ?</li>
+                        <li>Deux équipes peuvent-elles se rencontrer plusieurs fois ?</li>
+                    </ul>
+                </li>
+                <li><b>Donner les contraintes d’intégrité référentielle (clé étrangères) associées à ce schéma.</b></li>
+                <li><b>Répondre aux requêtes suivantes en algébrique:</b>
+                    <ul>
+                        <li>Age et position du joueur Kilian Mbappé</li>
+                        <li>Type et date des matchs dans lesquels a joué la France en tant qu’équipe 1 ou en tant  qu’équipe 2</li>
+                        <li>Nom de l’entraineur, nom et poule de l’équipe de Mario Mandzudic</li>
+                        <li>Nom des arbitre qui on été arbitre centrale et arbitre vidéo (<mark>Donnez 2 solution</mark>)</li>
+                        <li>Nom des arbitres qui n’ont pas joué de matchs le 1<sup>er</sup> juillet 2018</li>
+                        <li>Nom des arbitre ayant arbitré tous les types de matchs</li>
+                    </ul>
+                </li>
+                <li><b>Répondre aux requêtes suivantes en SQL:</b>
+                    <ul>
+                        <li>Nom des équipes dont le nom de l’entraineur contient ‘Didier’</li>
+                        <li>Age moyen des joueurs de l’équipe de France</li>
+                        <li>Nom, prénom et position des joueurs qui jouent dans l’équipe de Didier Deschamps</li>
+                        <li>Nom des arbitres qui ont été arbitre central ou arbitre vidéo dans le match Finale France Croatie (<mark>Donnez 2 solutions</mark>)</li>
+                        <li>Information sur le matchs qui a eu lieu le 15 juillet 2018: type du match, équipes, résultats de chaque équipe et arbitre ayant arbitré le match avec leur rôle</li>
+                        <li>Noms des arbitres qui arbitré un match de 8<sup>ème</sup> de final et un match de Quart de final</li>
+                        <li>Nombres de joueurs dans chaque équipe</li>
+                        <li>Noms des arbitres qui n’ont jamais eu le rôle d’arbitre central</li>
+                        <li>Noms des équipes qui n’ont aucun joueurs de moins de 20 ans</li>
+                        <li>Noms des arbitres qui ont eu tout les rôles</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>
