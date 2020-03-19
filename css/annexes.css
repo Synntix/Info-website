@@ -1,4 +1,13 @@
 td{
   font-family: monospace;
   font-size: 14px;
+  text-align: left;
+}
+
+em{
+  color: darkred;
+}
+
+.tab{
+  margin-left: 20px;
 }
