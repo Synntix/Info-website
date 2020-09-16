@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+variable<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -25,6 +25,8 @@
         <th>Python</th>
         <th>Java</th>
         <th>PL/pgSQL</th>
+        <th>C</th>
+        <th>Bash Script</th>
       </tr>
       <tr>
         <th>Commentaire</th>
@@ -35,24 +37,33 @@
           // <br>
           /* Commentaire multiligne */</td>
         <td>--</td>
+        <td>
+          // <br>
+          /* Commentaire multiligne */</td>
+        <td>#</td>
       </tr>
       <th>Déclaration</th>
         <td>
-          nomVariable : nomType; <br>
-          nomVariable : nomType := valeur;
+          variable : type; <br>
+          variable : type := valeur;
         </td>
         <td>
-          nomVariable <br>
-          nomVariable = valeur
+          variable <br>
+          variable = valeur
         </td>
         <td>
-          nomType nomVariable; <br>
-          nomType nomVariable = valeur;
+          type variable; <br>
+          type variable = valeur;
         </td>
         <td>
-          nomVariable nomType; <br>
-          nomVariable nomType := valeur;
+          variable type; <br>
+          variable type := valeur;
         </td>
+        <td>
+          type variable; <br>
+          type variable = valeur;
+        </td>
+        <td>variable=valeur</td>
       </tr>
       <tr>
         <th>Affectation</th>
@@ -60,6 +71,8 @@
         <td>=</td>
         <td>=</td>
         <td>:=</td>
+        <td>=</td>
+        <td>=</td>
       </tr>
       <tr>
         <th>Égal</th>
@@ -67,6 +80,8 @@
         <td>==</td>
         <td>==</td>
         <td>=</td>
+        <td>==</td>
+        <td>== ou -eq</td>
       </tr>
       <tr>
         <th>Différent</th>
@@ -74,6 +89,8 @@
         <td>!=</td>
         <td>!=</td>
         <td>!=</td>
+        <td>!=</td>
+        <td>!= ou -ne</td>
       </tr>
       <tr>
         <th>Incrémentation</th>
@@ -87,11 +104,21 @@
         </td>
         <td>
           nb = 0; <br>
+          nb += 1; <br>
           nb++;
         </td>
         <td>
           nb := 0;<br>
           nb := nb + 1;
+        </td>
+        <td>
+          nb = 0; <br>
+          nb += 1; <br>
+          nb++;
+        </td>
+        <td>nb=$(( nb+1 ))<br>
+          (( nb += 1 ))<br>
+          (( nb++ ))
         </td>
       </tr>
       <th>Décrémentation</th>
@@ -110,6 +137,15 @@
         <td>
           nb := 0;<br>
           nb := nb - 1;
+        </td>
+        <td>
+          nb = 0; <br>
+          nb -= 1; <br>
+          nb--;
+        </td>
+        <td>nb=$(( nb-1 ))<br>
+          (( nb -= 1 ))<br>
+          (( nb-- ))
         </td>
       </tr>
       <tr>
@@ -148,6 +184,23 @@
           else <br>
           <span class="tab"><em>instruction3</em>;</span><br>
           end if;
+        </td>
+        <td>
+          if (<em>cond1</em>) {<br>
+          <span class="tab"><em>instruction1</em>;</span><br>
+          } else if (<em>cond2</em>) { <br>
+          <span class="tab"><em>instruction2</em>;</span><br>
+          } else {<br>
+          <span class="tab"><em>instruction3</em>;</span><br>
+          }
+        </td>
+        <td>if [ <em>cond1</em> ]; then<br>
+          <span class="tab"><em>commande1</em></span><br>
+          elif [ <em>cond2</em> ]; then<br>
+          <span class="tab"><em>commande2</em></span><br>
+          else<br>
+          <span class="tab"><em>commande3</em></span><br>
+          fi
         </td>
       </tr>
     </table>
