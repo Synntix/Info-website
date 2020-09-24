@@ -2,10 +2,30 @@ body{
   font-family: "Montserrat"
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 120%;
+}
+
+header img {
+  width: 8%;
+}
+
 h1{
-  background-image: linear-gradient(to bottom right, #0093FF, #A623D4);
+  text-align: center;
+  flex-grow: 2;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom right, #557bd8, #b44ae9);
+  /* background-image: -webkit-linear-gradient(#557bd8, #b44ae9); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 5px;
+  width: 40%;
 }
 
 em{
-  color: #0093FF
+  color: #0093FF;
 }
