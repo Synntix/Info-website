@@ -1,16 +1,23 @@
 body{
-  font-family: "Montserrat"
+  font-family: "Montserrat";
+  width: 100%;
+  padding: 0% 10%;
 }
 
 header {
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 120%;
+
+  /* width: 120%; */
+  margin: 0% -10%;
+  background-color: #1c1c1c;
 }
 
 header img {
+  /* position: fixed; */
   width: 8%;
 }
 
@@ -28,4 +35,7 @@ h1{
 
 em{
   color: #0093FF;
+}
+a{
+  font-weight: 600;
 }
