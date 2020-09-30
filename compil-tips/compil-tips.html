@@ -23,6 +23,21 @@
         Alors si vous vous demandez où aller, <i>moi j'crois la question elle est vite répondue</i>... </p>
       <img src="../ressources/plan-cafe-IUT1.png" alt="Plan vers hall IUT1">
     </article>
+
+    <article class="transit-script">
+      <h2></h2>
+      <p>Le SSH c'est bien pratique, mais se taper le nom de domaine à rallonge de l'IUT à chaque fois, ça l'est moins.
+      Vous pouvez faire un alias bien sûr, mais ça ne vaut pas <em>un bon script Bash</em> <a href="../ressources/transit">comme celui-là</a>!<br/>
+      Il vous suffit de le configurer une fois en remplaçant <code>placeholder</code> (ligne 4) par votre username, puis de rendre le fichier exécutable (<code>chmod u+x ./transit</code>) et de le mettre dans votre <code>~/.local/bin</code>.
+      <ul>
+        <li>Connexion classique : <code>transit</code></li>
+        <li>Connexion vers un poste Linux particulier : <code>transit --jump num_salle num_machine</code></li>
+        <li>Connexion graphique VNC : <code>transit --vnc num_salle num_machine</code></li>
+      </ul>
+      De toute façon, il y a un <code>--help</code>, vous le lisez n'est-ce pas?
+    </p>
+    </article>
+
     <article class="edt">
       <h2>L'emploi du temps à portée de main</h2>
       <p>Marre de devoir aller jusqu'au panneau d'affichage ou galérer avec ADE sur téléphone ? Heureusement, il existe d'autres moyens...</p>

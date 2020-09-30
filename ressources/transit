@@ -1,0 +1,85 @@
+#!/bin/bash
+#Connexion SSH IUT
+
+username="placeholder"
+addr="$username@transit.iut2.univ-grenoble-alpes.fr"
+
+version="0.2"
+versiondate="30/09/2020"
+
+if [[ -z $1 ]]; then
+  # Aucun argument : connexion classique
+  echo "Transit : Connexion SSH classique"
+  ssh $addr
+
+elif [[ $1 == "-h" || $1 == "--help" ]]; then
+
+
+  cat << EOF
+  Script de connexion SSH au serveur Transit de l'IUT2
+Usage : transit [options]
+Options disponibles :
+    -j|--jump num_salle num_machine
+        Utilise Transit comme pont SSH vers une machine spécifique (utile en TP réseaux, ou pour éviter de surcharger le serveur).
+        Les paramètres num_salle et num_machine doivent désigner un poste valide d'une salle Linux.
+        Ex : transit -j 35 04
+
+    -v|--vnc num_salle num_machine
+        Ouvre une connexion graphique VNC vers une machine spécifique. La commande 'vncviewer' DOIT être disponible.
+        Les paramètres sont les mêmes que pour --jump.
+        (Il est recommandé d'utiliser cette option uniquement pour faire quelque chose qui nécessite expressément un affichage graphique, dû à l'impact sur la bande passante du serveur. Qualité variable selon votre connexion et le nombre d'utilisateurs connectés.)
+
+    -h|--help
+        Affiche cette aide.
+
+Configuration : éditez ce fichier et remplacez 'placeholder' (ligne 4) par votre nom d'utilisateur.
+
+/!\ Ceci est une version basique qui 'fonctionne juste' ; le contrôle de saisie, les conventions Bash ou la propreté du code ne sont pas garantis pour l'instant.
+Script par Eliott SAMMIER (Discord: TickingFeather#0128) pour La 4e Compilation.
+Vous êtes libres de l'améliorer, tant que vous mentionnez les contributeurs précédents.
+Version $version, le $versiondate.
+
+EOF
+
+
+
+elif [[ $1 == "-j" || $1 == "--jump" || $1 == "-v" || $1 == "--vnc" ]]; then
+  #statements
+  if [[ -z $2 ]]; then
+    echo "Erreur : Paramètre 'num_salle' manquant."
+    exit 1
+  elif [[ -z $3 ]]; then
+    echo "Erreur : Paramètre 'num_machine' manquant."
+    exit 1
+  else
+    hostname="pc-dg-0$2-$3"
+    case $1 in
+      "-j" )
+      ;&
+      "--jump" )
+        echo "Transit : Connexion SSH avec jump vers poste $3, salle $2"
+        ssh -J $addr "$username@$hostname"
+      ;;
+      "-v" )
+      ;&
+      "--vnc" )
+
+        # Vérification : vncviewer est il disponible?
+        if [[ -z $(command -v vncviewer) ]]; then
+          echo "Erreur : La commande 'vncviewer' n'est pas disponible. Vérifiez si le package 'tigervnc' est bien installé."
+          exit 1
+        fi
+        echo "Transit : Connexion graphique VNC via SSH sur poste $3, salle $2"
+        ssh -f -N -L 5900:$hostname:5900 $addr
+        vncviewer localhost
+      ;;
+      * )
+        echo -e "Erreur : Argument '$1' invalide.\nAide : transit --help"
+        exit 1
+      ;;
+    esac
+  fi
+else
+  echo -e "Erreur : Argument '$1' invalide.\nAide : transit --help"
+  exit 1
+fi
