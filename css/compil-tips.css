@@ -1,36 +1,40 @@
 body{
   font-family: "Montserrat";
-  width: 100%;
+  width: 80%;
   padding: 0% 10%;
 }
 
 header {
-
+  padding: 15px;
+  text-align: center;
+/*
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
 
-  /* width: 120%; */
+  /* width: 100%; */
   margin: 0% -10%;
   background-color: #1c1c1c;
 }
 
 header img {
-  /* position: fixed; */
+  position: absolute;
+  top : 10px;
+  left: 40px;
   width: 8%;
 }
 
 h1{
   text-align: center;
-  flex-grow: 2;
+  /* flex-grow: 2; */
   font-weight: bold;
   background-image: linear-gradient(to bottom right, #557bd8, #b44ae9);
   /* background-image: -webkit-linear-gradient(#557bd8, #b44ae9); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-radius: 5px;
-  width: 40%;
+  /* width: 40%; */
 }
 
 em{
