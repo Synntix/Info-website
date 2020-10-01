@@ -14,8 +14,21 @@ header {
   align-items: center; */
 
   /* width: 100%; */
-  margin: 0% -10%;
+  margin: 0% -15%;
   background-color: #1c1c1c;
+}
+
+nav a {
+  background-color: #0093FF;
+  padding: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: white;
+  border: 1px solid #0093FF;
+  color: #0093FF;
 }
 
 header img {
@@ -27,18 +40,29 @@ header img {
 
 h1{
   text-align: center;
-  /* flex-grow: 2; */
   font-weight: bold;
-  background-image: linear-gradient(to bottom right, #557bd8, #b44ae9);
+  font-size: 3em;
+  background-image: linear-gradient(to bottom right, #24A3FF, #b44ae9);
   /* background-image: -webkit-linear-gradient(#557bd8, #b44ae9); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-radius: 5px;
-  /* width: 40%; */
+}
+
+h2 {
+  background-color: #0093FF;
+  padding: 10px 0px 10px 20%;
+  margin: 0% 60% 0% -20%;
+  border-radius: 30px;
+  /* display: inline-block; */
 }
 
 h3{
   font-weight: 600;
+}
+
+article {
+  margin: 20px;
 }
 
 em{
