@@ -17,7 +17,7 @@
   </p>
   <article class="ade">
     <h2>Obtenir le lien iCal</h2>
-    <p>Commencez par aller consulter <a href="https://chamilo.iut2.univ-grenoble-alpes.fr/index.php?include=Emploi-du-temps_french.html"></a>ADE <i>(si vous ne connaissez pas encore, <a href="#">on vous explique ici</a>)</i>
+    <p>Commencez par aller consulter <a href="https://chamilo.iut2.univ-grenoble-alpes.fr/index.php?include=Emploi-du-temps_french.html" target="_blank"></a>ADE <i>(si vous ne connaissez pas encore, <a href="#">on vous explique ici</a>)</i>
       Sélectionnez votre emploi du temps, puis cliquez sur l'icône <em>Export Agenda</em> en bas à gauche.
     </p>
     <img src="../ressources/ade-general.jpeg" alt="ADE - Vue d'ensemble">
@@ -29,10 +29,10 @@
     <img src="../ressources/ade-exportwindow.png" alt="ADE - Fenêtre d'export iCal">
     <p>Et voilà, vous avez votre lien ! Vous pouvez le garder dans un fichier texte le temps de voir comment l'entrer dans votre logiciel/appli agenda préféré-e juste après.</p>
   </article>
-  <article class="applications">
+  <article id="applications">
     <h2>Configurer l'application agenda</h2>
     <p><i>/!\ Article en cours de rédaction (eh oui, mine de rien ça prend du temps de chercher et faire les screenshots...)</i></p>
-    <section>
+    <section id="gcalendar">
       <h3><a href="https://calendar.google.com/" target="_blank">Google Agenda</a></h3>
       <p>Sur la version navigateur, l'ajout se fait littéralement en 4 clics, plutôt pas mal ! Par contre sur l'appli Android... ben c'est pas possible en fait, pas encore implémenté, donc <em>vous devez passer par la version navigateur</em> au moins pour ajouter l'agenda la première fois.</p>
       <p>Dans la liste des agendas à gauche, section Autres agendas, cliquez sur le <em>+</em>, puis choisissez <em>À partir de l'URL</em>.</p>
@@ -42,11 +42,11 @@
       <p>On peut reconnaître un truc à Google, c'est qu'ils savent faire des interfaces simples. Si vous utilisez l'appli Android, l'agenda devrait être synchronisé.</p>
       <p></p>
     </section>
-    <section>
+    <section id="outlook">
       <h3>Outlook</h3>
       <p> <i>[Section en cours de rédaction...]</i> </p>
     </section>
-    <section>
+    <section id="thunderbird">
       <h3><a href="https://www.thunderbird.net/fr/" target="_blank">Mozilla Thunderbird</a></h3>
       <p>Dans l'onglet <em>Calendrier</em> cliquez droit sur la liste des agendas à gauche et choisissez <em>New Calendar</em>.</p>
       <img src="../ressources/thunderbird-general.jpeg" alt="Thunderbird - Vue d'ensemble des agendas">
@@ -58,11 +58,29 @@
         Vous pouvez masquer l'agenda en cochant sa case dans la liste de gauche.
       </p>
     </section>
-    <section>
+    <section id="androidapps">
       <h3>Applications Android diverses</h3>
-      <p> <i>[Section en cours de rédaction...]</i> </p>
+      <p>Certaines applis agenda gèrent elles-mêmes la synchronisation iCal, mais c'est plutôt rare. La plupart se contentent des agendas locaux Android, en laissant Google Agenda s'occuper de la synchronisation.</p>
+      <ul>
+        <li>Si vous n'avez rien contre Google et que vous cherchez juste un moyen simple, allez voir la section <a href="#gcalendar">Google Agenda</a></li>
+        <li>Sinon, quitte à éviter Google Agenda, autant éviter Google tout court : lisez la suite de cette section.</li>
+      </ul>
+
+      <p>On va donc utiliser une appli de synchronisation iCal dédiée. Je conseille habituellement <a href="https://f-droid.org/en/packages/at.bitfire.icsdroid/" target="_blank">ICSx5</a>, simple et efficace, qui est gratuite sur <em>F-Droid</em>. <br>
+        Si vous ne connaissez pas encore, <a href="https://f-droid.org/" target="_blank">F-Droid</a> est le catalogue d'applis libres et open-source le plus connu. Vous pouvez soit télécharger les APK directement depuis le site, soit utiliser l'appli F-Droid qui facilite les installations et mises à jour.
+    </p>
+    <p>Une fois ICSx5 installé, l'interface est plutôt explicite : ajoutez un agenda avec <em>+</em>...</p>
+    <img src="../ressources/icsx5-general.jpeg" alt="">
+    <p>... collez votre lien ...</p>
+    <img src="../ressources/icsx5-link.jpeg" alt="">
+    <p>... choisissez un titre et une couleur, et validez.</p>
+    <img src="../ressources/icsx5-custom.jpeg" alt="">
+    <p>Dernière chose : définir la fréquence d'actualisation avec <em>Set sync. interval</em>.</p>
+    <img src="../ressources/icsx5-interval.jpeg" alt="">
+    <p>A partir de maintenant, <em>vous pouvez utiliser l'agenda Android créé par ICSx5</em> dans n'importe quelle appli agenda. Et si vous cherchez des suggestions, <a href="https://f-droid.org/en/packages/ws.xsoh.etar/" target="_blank">Etar</a> est un agenda open-source avec une interface Material Design assez propre et fonctionnelle. Avis aux amateurs...</p>
+
     </section>
-    <section>
+    <section id="apple">
       <h3>Apple iCalendar</h3>
       <p> <i>[En l'absence d'appareil Apple, la rédaction est actuellement incapable de documenter cette section. En attendant, les moteurs de recherche sont vos amis...]</i> </p>
     </section>
