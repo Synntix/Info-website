@@ -100,32 +100,33 @@
           En mettant la souris tout a gauche, une petite flèche s'afficher. Il faut cliquer dessus puis cliquer sur l'onglet "remote".<br><br>
           <img src="img/remote.png" alt="Remote"><br><br>
           Puis ouvrire "Edit config".<br>
-          Ici il faut copier la config en remplacant [login] par votre login et [chemin] par le chemin absolue de <em>public_HTML</em> sur <em>transit</em>. Il peut s'obtenir via la commande <code>pwd</code> dans le shell, sinon c'est souvent "/users/info/etu-s3/[login]/public_html".<br><br>
-          <code>
-            {<br>
-              "protocol": "sftp",<br>
-              "host": "transit.iut2.univ-grenoble-alpes.fr",<br>
-              "port": 22,<br>
-              "user": "[login]",<br>
-              "pass": "pass",<br>
-              "promptForPass": true,<br>
-              "remote": "[chemin]",<br>
-              "local": "",<br>
-              "agent": "",<br>
-              "privatekey": "",<br>
-              "passphrase": "",<br>
-              "hosthash": "",<br>
-              "ignorehost": true,<br>
-              "connTimeout": 10000,<br>
-              "keepalive": 10000,<br>
-              "keyboardInteractive": false,<br>
-              "keyboardInteractiveForPass": false,<br>
-              "remoteCommand": "",<br>
-              "remoteShell": "",<br>
-              "watch": [],<br>
-              "watchTimeout": 500<br>
-            }
-          </code><br><br>
+          Ici il faut copier la config en remplacant [login] par votre login et [chemin] par le chemin absolue de <em>public_HTML</em> sur <em>transit</em>.
+          Il peut s'obtenir via la commande <code>pwd</code> dans le shell, sinon c'est souvent "/users/info/etu-s3/[login]/public_html".<br>
+          <pre>
+{
+  "protocol": "sftp",
+  "host": "transit.iut2.univ-grenoble-alpes.fr",
+  "port": 22,
+  "user": "[login]",
+  "pass": "pass",
+  "promptForPass": true,
+  "remote": "[chemin]",
+  "local": "",
+  "agent": "",
+  "privatekey": "",
+  "passphrase": "",
+  "hosthash": "",
+  "ignorehost": true,
+  "connTimeout": 10000,
+  "keepalive": 10000,
+  "keyboardInteractive": false,
+  "keyboardInteractiveForPass": false,
+  "remoteCommand": "",
+  "remoteShell": "",
+  "watch": [],
+  "watchTimeout": 500
+}
+          </pre><br>
         </p>
       </section>
 
