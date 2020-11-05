@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Semestre 3 - M3104</title>
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="shortcut icon" href="../static/programmingicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <meta name="author" content="Elian LORAUX">
+  </head>
+
+  <body>
+    <h1><a href="index-s3.html">Semestre 3</a> - M3104 : PHP</h1>
+
+
+    <article class="Remot-ftp">
+      <h2>Remote-FTP</h2>
+      <p>
+        Pendant les cours de PHP vous avez marre d'envoyer vôtre public-html ?<br>
+        Ça vous prend du temps alors que vous avez juste ajouté un point virgules ?<br>
+        J'ai la solution !<br><br>
+      </p>
+
+      <section>
+        <h3>Prérequis</h3>
+        <p>
+          Tout dabort il faut se munir <em>d'atom</em>.<br>
+          Sous Linux via l'installeur de package et sous Windows via <a href="#">ce lien</a><br>
+          Atom téléchargé, il faut maintenant copier public_HTML depuis transit.<br>
+
+        </p>
+      </section>
+
+      <section>
+        <h3>Le Package</h3>
+        <p>
+          Une fois atom ouvert il faudra se rendre dans l'installeur de package.
+          <code>Crtl+,</code> pour acceder aux setting puis cliquez sur "install" <br><br>
+          <img src="img/package-installeur.png" alt="installateur de package"><br><br>
+          Ensuite installer le package "<em>remote-ftp</em>".<br><br>
+          <img src="img/remote-ftp.png" alt="pacckage remote ftp"><br><br>
+          Ça y est ! Le package est installer ! On peut passer a la suite.
+        </p>
+      </section>
+
+      <section>
+        <h3>La config</h3>
+        <p>
+          Une fois le package installer on peut faire la configuration.<br><br>
+
+          Tout dabort, il faut ouvrire votre dossier de PHP. Pour ça rien de plus simple ! File &lt; Add Project Folder ou <code>Ctrl+Maj+A</code><br><br>
+
+          Ensuite il faut ouvrire le panneau de remote-ftp.<br>
+          Pour ça il faut aller dans package &lt; remote-ftp &lt; toggle.<br><br>
+          <img src="img/Toggle.png" alt="Chemin de Toggle"><br><br>
+
+          Maintenant, il faut ouvrire le ficher de config.<br>
+          En mettant la souris tout a gauche, une petite flèche s'afficher. Il faut cliquer dessus puis cliquer sur l'onglet "remote".<br><br>
+          <img src="img/remote.png" alt="Remote"><br><br>
+          Puis ouvrire "Edit config".<br>
+          Ici il faut copier la config en remplacant [login] par votre login et [chemin] par le chemin absolue de <em>public_HTML</em> sur <em>transit</em>.
+          Il peut s'obtenir via la commande <code>pwd</code> dans le shell, sinon c'est souvent "/users/info/etu-s3/[login]/public_html".<br>
+          <pre>
+{
+  "protocol": "sftp",
+  "host": "transit.iut2.univ-grenoble-alpes.fr",
+  "port": 22,
+  "user": "[login]",
+  "pass": "pass",
+  "promptForPass": true,
+  "remote": "[chemin]",
+  "local": "",
+  "agent": "",
+  "privatekey": "",
+  "passphrase": "",
+  "hosthash": "",
+  "ignorehost": true,
+  "connTimeout": 10000,
+  "keepalive": 10000,
+  "keyboardInteractive": false,
+  "keyboardInteractiveForPass": false,
+  "remoteCommand": "",
+  "remoteShell": "",
+  "watch": [],
+  "watchTimeout": 500
+}
+          </pre><br>
+        </p>
+      </section>
+
+      Plus qu'à sauvgarder et cliquer sur "connect".<br>
+      Vous travaillerez dans "projet" (pour crer, ouvrire, modifier des fichers). Et a chaque enregistrement, il sera mis à jours dans votre public_HTML accesible via http://www-etu-info.iut2.upmf-grenoble.fr/~[login]/
+
+    </article>
+  </body>
