@@ -64,86 +64,110 @@
       </section>
     </article>
 
-    <article class="Remot-ftp" id="remot-ftp">
-      <h2>FTP avec classe</h2>
+    <article class="Remote-ftp" id="remote-ftp">
+      <h2>SFTP avec classe</h2>
       <p>
-        Vous voulez envoyer vos ficher dans vôtre homedir à l'iut dès que vous les modifier en local?<br>
-        Pendant les cours de PHP notament vous avez marre d'envoyer vôtre public-html ?<br>
-        Ça vous prend du temps alors que vous avez juste ajouté un point virgules ?<br>
-        J'ai la solution et Windows et Linux !<br><br>
+        Vous avez la flemme de mettre en place sur votre PC un serveur Web, un SGBD ou un compilateur alors que tout marche déjà à l'IUT ?<br>
+        Vous cherchez un moyen d'envoyer vos fichiers dans votre <i>homedir</i> sur Transit dès que vous les modifiez en local ?<br>
+        Vous en avez marre de faire le transfert FileZilla à la main au moindre point-virgule ajouté ?<br>
+        On a la solution, pour Windows et Linux !<br><br>
       </p>
 
       <section>
         <h3>Prérequis</h3>
         <p>
-          Tout dabort il faut se munir <em>d'atom</em>.<br>
-          Sous Linux via l'installeur de package et sous Windows via <a href="#">ce lien</a><br>
-          Atom téléchargé, il faut maintenant copier le dossier qui contiens les fichier à modifier depuis transit.<br>
-
+          Tout d'abord, vous aurez besoin de l'éditeur <em>Atom</em>, téléchargeable sur <a href="https://atom.io/">le site officiel</a> ou, pour les Linuxiens, dans votre <i>package manager.</i> <br>
+          <i>(Si vous avez une méthode pour VSCode, Sublime ou d'autres éditeurs, n'hésitez pas à nous la transmettre sur Discord)</i><br>
+        </p>
+        <p>
+          Vous devrez également copier depuis Transit sur votre machine le répertoire que vous voulez synchroniser.
         </p>
       </section>
 
       <section>
-        <h3>Le Package</h3>
+        <h3>Le package</h3>
         <p>
-          Une fois atom ouvert il faudra se rendre dans l'installeur de package.
-          <code>Crtl+,</code> pour acceder aux setting puis cliquez sur "install" <br><br>
-          <img src="img/package-installeur.png" alt="installateur de package"><br><br>
-          Ensuite installer le package "<em>remote-ftp</em>".<br><br>
-          <img src="img/remote-ftp.png" alt="pacckage remote ftp"><br><br>
-          Ça y est ! Le package est installer ! On peut passer a la suite.
+          Une fois Atom ouvert, rendez vous dans l'installeur de packages : accédez aux paramètres avec <code>Ctrl + virgule</code> puis choisissez la section <em>Install</em>.<br>
+        </p>
+        <img src="../ressources/package-installer.png" alt="installateur de packages">
+        <p>
+          Cherchez et installez le package "<em>remote-ftp</em>" (celui de "icetee")
+        </p>
+        <img src="../ressources/remote-ftp.png" alt="Capture d'écran du package remote-ftp">
+        <p>
+          <i>Vous n'aurez à faire cette étape <em>qu'une seule fois</em>.</i>
         </p>
       </section>
 
       <section>
-        <h3>La config</h3>
+        <h3>La configuration</h3>
         <p>
-          Une fois le package installer on peut faire la configuration.<br><br>
+          Une fois le package installé, reste à le configurer correctement.<br><br>
 
-          Tout dabort, il faut ouvrire votre dossier. Pour ça rien de plus simple ! File &lt; Add Project Folder ou <code>Ctrl+Maj+A</code><br><br>
+          Tout d'abord, il faut ouvrir votre répertoire. Pour ça, rien de plus simple : <em>File</em> &rarr; <em>Add Project Folder</em> ou <code>Ctrl+Maj+A</code><br><br>
 
-          Ensuite il faut ouvrire le panneau de remote-ftp.<br>
-          Pour ça il faut aller dans package &lt; remote-ftp &lt; toggle.<br><br>
-          <img src="img/Toggle.png" alt="Chemin de Toggle"><br><br>
-
-          Maintenant, il faut ouvrire le ficher de config.<br>
-          En mettant la souris tout a gauche, une petite flèche s'afficher. Il faut cliquer dessus puis cliquer sur l'onglet "remote".<br><br>
-          <img src="img/remote.png" alt="Remote"><br><br>
-          Puis ouvrire "Edit config".<br>
-          Ici il faut copier la config en remplacant [login] par votre login et [chemin] par le chemin absolue de <em>vôtre dossier</em> sur <em>transit</em>.
-          Il peut s'obtenir via la commande <code>pwd</code> dans le shell ou dans un explorateur de ficher.<br>
-          <pre>
-{
-  "protocol": "sftp",
-  "host": "transit.iut2.univ-grenoble-alpes.fr",
-  "port": 22,
-  "user": "[login]",
-  "pass": "pass",
-  "promptForPass": true,
-  "remote": "[chemin]",
-  "local": "",
-  "agent": "",
-  "privatekey": "",
-  "passphrase": "",
-  "hosthash": "",
-  "ignorehost": true,
-  "connTimeout": 10000,
-  "keepalive": 10000,
-  "keyboardInteractive": false,
-  "keyboardInteractiveForPass": false,
-  "remoteCommand": "",
-  "remoteShell": "",
-  "watch": [],
-  "watchTimeout": 500
-}
-          </pre><br>
+          Ensuite, ouvrez le panneau de Remote FTP.<br>
+          Pour ça, allez dans <em>Packages</em> &rarr; <em>Remote FTP</em> &rarr; <em>Toggle</em>.
+        </p>
+        <img src="../ressources/packages-menu.png" alt="Capture d'écran du menu Packages">
+        <p>
+          Maintenant, il faut ouvrir le fichier de configuration.<br>
+          Dans le panneau de gauche où vous voyez vos fichiers, choisissez l'onglet <em>Remote</em>. Si le panneau n'est pas visible, vous pouvez le déplier en cliquant sur la petite flèche qui apparaît sur le bord gauche de l'écran.
+        </p>
+        <img src="../ressources/remote-pane.png" alt="Capture d'écran panneau Remote">
+        <p>
+          Choisissez <em>Edit Configuration</em> pour ouvrir le fichier de configuration de votre répertoire.
+        </p>
+        <p>
+          Ici, copiez la configuration ci-dessous en remplacant [login] par votre login et [chemin] par <em>le chemin <u>absolu</u> de votre répertoire</em> sur Transit.
+          Il peut s'obtenir via la commande <code>pwd</code> dans le shell ou dans un explorateur de fichier, et doit ressembler à <code>/users/info/etu-s1/votrelogin/votrerépertoire</code>
+        </p>
+        <pre>
+          {
+            "protocol": "sftp",
+            "host": "transit.iut2.univ-grenoble-alpes.fr",
+            "port": 22,
+            "user": "[login]",
+            "pass": "pass",
+            "promptForPass": true,
+            "remote": "[chemin]",
+            "local": "",
+            "agent": "",
+            "privatekey": "",
+            "passphrase": "",
+            "hosthash": "",
+            "ignorehost": true,
+            "connTimeout": 10000,
+            "keepalive": 10000,
+            "keyboardInteractive": false,
+            "keyboardInteractiveForPass": false,
+            "remoteCommand": "",
+            "remoteShell": "",
+            "watch": [],
+            "watchTimeout": 500
+          }
+        </pre>
+        <p>N'oubliez pas de sauvegarder évidemment.</p>
+        <p>
+          <i>Vous devrez refaire cette étape <em>pour chaque nouveau répertoire</em> que vous voudrez synchroniser en SFTP.</i>
+        </p>
+      </section>
+      <section>
+        <h3>La connexion</h3>
+        <p>
+          Dans le panneau Remote, cliquez sur <em>Connect</em>. Un pop-up devrait vous demander votre mot de passe. Si tout se passe bien, vous devriez avoir une notification de confirmation :
+        </p>
+        <img src="../ressources/remote-ftp-success.png" alt="Capture d'écran de la notification de succès">
+        <p>
+          Vous travaillerez dans le panneau <em>Project</em> à gauche (pour créer, ouvrir, modifier des fichiers), et à chaque enregistrement, le répertoire correspondant dans votre <i>homedir</i> à l'IUT sera mis à jour.
+        </p>
+        <p>
+          <i>Vous devrez refaire cette étape <em>à chaque fois que vous réouvrirez ce répertoire</em> avec Atom.</i>
         </p>
       </section>
 
-      Plus qu'à sauvgarder et cliquer sur "connect".<br>
-      Vous travaillerez dans "projet" (pour crer, ouvrire, modifier des fichers). Et a chaque enregistrement, il sera mis à jours dans votre dossier à l'IUT.
 
     </article>
 
   </body>
-</html>
+  </html>
